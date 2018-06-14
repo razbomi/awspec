@@ -4,6 +4,9 @@ require 'awspec/matcher/belong_to_subnet'
 require 'awspec/matcher/have_tag'
 require 'awspec/matcher/have_network_interface'
 
+# Firehose
+require 'awspec/matcher/have_splunk_destination'
+
 # RDS
 require 'awspec/matcher/belong_to_db_subnet_group'
 require 'awspec/matcher/have_db_parameter_group'
