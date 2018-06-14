@@ -10,7 +10,7 @@ describe firehose('my-firehose') do
 end
 
 describe firehose('my-firehose') do
-  it {should have_source_type('DirectPut')}
+  it {should have_delivery_stream_type('DirectPut')}
 end
 
 describe firehose('my-firehose') do
@@ -28,7 +28,7 @@ describe firehose('my-firehose') do
                                             enabled: true,
                                             log_group_name: 'log-group',
                                             log_stream_name: 'log-stream'
-                                          }) # TODO: test with different options (logging_options == nill, partial logging)
+                                          })
              .s3_backup_mode('FailedEventsOnly')
              .s3_destination_description({
                                            role_arn: 'arn:aws:iam::123456789012:role/S3Access',

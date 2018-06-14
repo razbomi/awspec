@@ -7,6 +7,7 @@ RSpec::Matchers.define :have_splunk_destination do
     match = match && delivery_stream.splunk_destination.hec_acknowledgment_timeout_in_seconds == @hec_acknowledgment_timeout_in_seconds if @hec_acknowledgment_timeout_in_seconds
     match = match && delivery_stream.splunk_destination.s3_backup_mode == @s3_backup_mode if @s3_backup_mode
 
+    # TODO: Can we nest matchers, our objects, if not test hash with different scenarios (logging_options == nill, partial logging)
     match = match && delivery_stream.splunk_destination.retry_options.to_hash == @retry_options if @retry_options
     match = match && delivery_stream.splunk_destination.cloud_watch_logging_options.to_hash == @cloud_watch_logging_options if @cloud_watch_logging_options
     match = match && delivery_stream.splunk_destination.s3_destination_description.to_hash == @s3_destination_description if @s3_destination_description

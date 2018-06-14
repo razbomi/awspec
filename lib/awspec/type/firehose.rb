@@ -21,7 +21,7 @@ module Awspec::Type
       end
     end
 
-    def has_source_type?(type)
+    def has_delivery_stream_type?(type)
       resource_via_client.delivery_stream_type == type
     end
 
